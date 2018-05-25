@@ -19,23 +19,18 @@ $("ul").on("click", "span", function(event) {
   });
 });
 
-//UPDATE *****Optional: Allows individual names to be edited? */
-// $("ul").on("click", "li", function(){
-
-// })
-
-//READ Create button to select li at random
-$("#pickButton").on("click", function() {
-  var randomStudent = Math.floor(Math.random() * $("ul li").length + 1);
-
-  alert(randomStudent);
+//DELETE Create button to reset list of names (deletes all names)
+$("#resetButton").on("click", function() {
+  reset();
 });
 
-// function generateNameList(){
-//   const studentPicked = [];
-//   for(var i = 0; i < $("ul li").length; i++){
-//     studentPicked.push($("ul li"));
-//   }
+function reset() {
+  if (
+    prompt(
+      "Are you sure you want to delete all names? (Type 'Yes' to delete!)"
+    ) === "Yes"
+  ) {
+    $("li").remove()}}
 
 //DELETE Create button to reset list of names (deletes all names)
 $("#resetButton").on("click", function() {
@@ -48,6 +43,33 @@ function reset() {
       "Are you sure you want to delete all names? (Type 'Yes' to delete!)"
     ) === "Yes"
   ) {
-    $("li").remove();
+    $("li").remove()}}
+
+
+//READ Create button to select li at random
+function randomStudent(){ 
+  let selectedStudent = Math.floor(Math.random() * $("ul li").length + 1);
+  return selectedStudent;
+} 
+
+const studentList = documents.querySelectorAll("ul li");
+
+function generateRandomStudent(num){
+  let arr = []; 
+  for(var i = 0; i < $("ul li").length; i++){
+    arr.push(randomStudent());
+    return arr;  
   }
 }
+
+
+
+
+$("#pickButton").on("click", function(event){
+
+});
+
+//UPDATE *****Optional: Allows individual names to be edited? */
+// $("ul").on("click", "li", function(){
+
+// })
