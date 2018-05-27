@@ -52,13 +52,12 @@ function randomStudent(){
   return selectedStudent;
 } 
 
-const studentList = documents.querySelectorAll("ul li");
 
-function generateRandomStudent(num){
-  let arr = []; 
+function generateRandomStudent(){
+  var arr = []; 
   for(var i = 0; i < $("ul li").length; i++){
-    arr.push(randomStudent());
-    return arr;  
+    arr.push(studentList.textContent;
+    return arr[selectedStudent];  
   }
 }
 
@@ -66,6 +65,7 @@ function generateRandomStudent(num){
 
 
 $("#pickButton").on("click", function(event){
+var studentList = document.getElementsById("#listNamesOne");
 
 });
 
