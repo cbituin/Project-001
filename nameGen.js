@@ -1,3 +1,4 @@
+
 //CREATE Allow for input of student names
 //READ/UPDATE Updates list with student names being added
 $("input[type='text']").keypress(function(event) {
@@ -5,7 +6,7 @@ $("input[type='text']").keypress(function(event) {
     const newStudent = $(this).val();
     $(this).val("");
     $("#listNamesOne").append(
-      "<li><span>Delete</Span> " + newStudent + "</li>"
+      "<li><span>Delete</Span> " + newStudent + " </li>"
     );
   }
 });
@@ -47,26 +48,22 @@ function reset() {
 
 
 //READ Create button to select li at random
-function randomStudent(){ 
-  let selectedStudent = Math.floor(Math.random() * $("ul li").length + 1);
-  return selectedStudent;
-} 
 
-
-function generateRandomStudent(){
-  var arr = []; 
-  for(var i = 0; i < $("ul li").length; i++){
-    arr.push(studentList.textContent;
-    return arr[selectedStudent];  
-  }
+//Get <li> text and //Add all <li> to arrays
+function getNames(){
+  var studentList = document.getElementById("listNamesOne").innerText;
+  var namesList = studentList.split("\n");
+  var selectedStudent = Math.floor(Math.random() * $("ul li").length + 1);
+  return namesList[selectedStudent];
 }
 
+//Display data
 
-
-
-$("#pickButton").on("click", function(event){
-var studentList = document.getElementsById("#listNamesOne");
-
+$("#pickButton").on("click", function(){
+  var studentList = document.getElementById("listNamesOne").innerText;
+  var namesList = studentList.split("\n");
+  var selectedStudent = Math.floor(Math.random() * ($("ul li").length + 1));
+  console.log(namesList[selectedStudent]);
 });
 
 //UPDATE *****Optional: Allows individual names to be edited? */
