@@ -1,3 +1,4 @@
+var nameOfStudent = document.getElementById("select");
 //CREATE Allow for input of student names
 //READ/UPDATE Updates list with student names being added
 $("input[type='text']").keypress(function(event) {
@@ -5,7 +6,7 @@ $("input[type='text']").keypress(function(event) {
     const newStudent = $(this).val();
     $(this).val("");
     $("#listNamesOne").append(
-      "<li><span>Delete</Span> " + newStudent + "</li>"
+      "<li><span>Delete</Span> " + newStudent + " </li>"
     );
   }
 });
@@ -19,35 +20,29 @@ $("ul").on("click", "span", function(event) {
   });
 });
 
-//UPDATE *****Optional: Allows individual names to be edited? */
-// $("ul").on("click", "li", function(){
-
-// })
-
-//READ Create button to select li at random
-$("#pickButton").on("click", function() {
-  var randomStudent = Math.floor(Math.random() * $("ul li").length + 1);
-
-  alert(randomStudent);
-});
-
-// function generateNameList(){
-//   const studentPicked = [];
-//   for(var i = 0; i < $("ul li").length; i++){
-//     studentPicked.push($("ul li"));
-//   }
-
 //DELETE Create button to reset list of names (deletes all names)
 $("#resetButton").on("click", function() {
   reset();
 });
 
 function reset() {
-  if (
-    prompt(
-      "Are you sure you want to delete all names? (Type 'Yes' to delete!)"
-    ) === "Yes"
-  ) {
-    $("li").remove();
+  if (prompt("Are you sure you want to delete all names? (Type 'Yes' to delete!)") === "Yes") {
+    $("li").remove()}
   }
+
+//READ Create button to select li at random
+//Get <li> text and //Add all <li> to arrays
+function getNames(){
+  var studentList = document.getElementById("listNamesOne").innerText;
+  var namesList = studentList.split("\n");
+  var selectedStudent = Math.floor(Math.random() * $("ul li").length + 1);
+  return namesList[selectedStudent];
 }
+
+//Select random <li> and display data
+$("#pickButton").on("click", function(){
+  var studentList = document.getElementById("listNamesOne").innerText;
+  var namesList = studentList.split("\n");
+  var selectedStudent = Math.floor(Math.random() * $("ul li").length);
+  nameOfStudent.textContent = namesList[selectedStudent];
+});

@@ -1,11 +1,48 @@
-#listNamesOne {
-    float: left;
-    width: 250px;
-    margin: 5%;
+/*TTD:
+1. Fix text "Generator" when in mobile mode
+2. 
+*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 500px;
 }
 
-#listNamesTwo {
-    float: left;
-    width: 250px;
-    margin: 5%;
+button {
+	background-color: #008080;
+	color: #551A8B;
+	border-radius: 20px;
+	font-size: 1.5em;
+}
+
+#topOfApp {
+	padding: 0 20px;
+	background-color: #008080;
+	border-radius: 20px;
+	box-sizing: content-box;
+	text-align: center;
+	color: #551A8B;
+	font-weight: 700;
+}
+
+#createdBy {
+	font-size: .75em;
+	text-align: center;
+}
+
+#content {
+	border: 1px solid black;
+	border-radius: 20px;
+	height: 1000px; 
+}
+
+#inputName {
+	margin-top: 25px;
+	width: 100%;
+	box-sizing: border-box;
+	height: 45px;
+	text-align: center;
+	font-size: 1.5em;
 }

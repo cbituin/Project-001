@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -5,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Random Name Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--   <link rel="stylesheet" type="text/css" media="screen" href="nameGen.css" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="nameGen.css" />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -16,33 +20,34 @@
     <div id="title">
       <h1>Random Name Generator</h1>
     </div>
-
-    <!-- Top of interaction area - includes student name input and both functioning buttons -->
-
-    <input id="inputName" type="text">
-    <div id="menu">
-      <button id="pickButton">Pick!</button>
-      <button id="resetButton">Reset!</button>
+    <div>
+      <h2 id="select">SELECTED STUDENT</h2>
     </div>
   </div>
 
-  <p id="medianArea">Created by Conrad @ <a href="https://www.conradbituin.com">ConradBituin.com</a></p>
-  <p id="medianArea">Using HTML, CSS, and JS (jQuery).</a>
-  </p>
+  <div id="createdBy">
+  <p id="medianArea">Created by Conrad @ <a href="https://www.conradbituin.com">ConradBituin.com</a><br>Using HTML, CSS, and JS (jQuery).</p>
+  </div>
 
   <!-- Area where list of names is shown - may add features to update and delete. Shortfall: Does not remove selected name from available pool  -->
 
   <div id="content">
 
+
+    <input id="inputName" type="text" placeholder="Enter Student Name">
+    <div id="menu">
+      <button id="pickButton">Pick!</button>
+      <button id="resetButton">Reset!</button>
+    </div>
+
     <div>
       <ul id="listNamesOne">
-        <li><span>Delete</Span> Name</li>
+        <!-- <li><span>Delete</Span> Name </li> -->
       </ul>
     </div>
     
   </div>
 
-<!--   <script src="nameGen.js"></script> -->
 </body>
-
+<script type="text/javascript" src="nameGen.js"></script>
 </html>
