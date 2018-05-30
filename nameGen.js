@@ -6,7 +6,7 @@ $("input[type='text']").keypress(function(event) {
     const newStudent = $(this).val();
     $(this).val("");
     $("#listNamesOne").append(
-      "<li><span>Delete</Span> " + newStudent + " </li>"
+      "<li><span><i class='fas fa-trash'></i></Span> " + newStudent + " </li>"
     );
   }
 });
@@ -26,7 +26,7 @@ $("#resetButton").on("click", function() {
 });
 
 function reset() {
-  if (prompt("Are you sure you want to delete all names? (Type 'Yes' to delete!)") === "Yes") {
+  if (prompt("Are you sure you want to delete all names? (Type 'y' to delete!)") === "y") {
     $("li").remove()}
   }
 
